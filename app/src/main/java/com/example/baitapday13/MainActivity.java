@@ -2,11 +2,18 @@ package com.example.baitapday13;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.AudioManager;
+import android.media.MediaParser;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +21,7 @@ import com.example.baitapday13.adapter.MusicAdapter;
 import com.example.baitapday13.model.Music;
 import com.example.baitapday13.parser.MusicParser;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +29,7 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
 private List<Music> musics;
 private ListView listView;
 private MusicAdapter musicAdapter;
+private MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +38,42 @@ private MusicAdapter musicAdapter;
         listView = findViewById(R.id.lv_music);
         musicAdapter = new MusicAdapter(musics,getApplicationContext());
         listView.setAdapter(musicAdapter);
+
+        // media
+        mediaPlayer = new MediaPlayer();
+
+
+      //  mediaPlayer.prepareAsync();
+
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                try {
+
+                    mediaPlayer.stop();
+
+                    mediaPlayer.setDataSource(musics.get(i).getSource());
+                    //mediaPlayer.prepareAsync();
+                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                    musicAdapter.notifyDataSetChanged();
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+
+            }
+        });
+
+
 //        Thread thread = new Thread(this);
 //        thread.start();
 

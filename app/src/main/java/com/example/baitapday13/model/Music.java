@@ -54,6 +54,14 @@ public class Music {
         this.image = image;
     }
 
+    public Music(String title, String artist, String genre, String source, String image) {
+        this.title = title;
+        this.artist = artist;
+        this.genre = genre;
+        this.source = source;
+        this.image = image;
+    }
+
     public String getTitle() {
         return title;
     }

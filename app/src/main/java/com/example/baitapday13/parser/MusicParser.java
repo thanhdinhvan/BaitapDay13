@@ -40,7 +40,7 @@ public class MusicParser {
                 line = reader.readLine();
             }
             JSONObject jsonObject = new JSONObject(stringBuilder.toString());
-           
+
             JSONArray jsonArray = jsonObject.getJSONArray("music");
            // Musicss musicss = new Musicss(jsonObject.getJSONObject("music"));
         //    Log.d("lovethuy", "parMusic: "+ musicss.toString());
@@ -59,7 +59,8 @@ public class MusicParser {
 //                String artist =musicss.getMusic().get(i).getArtist();
 //                String genre = musicss.getMusic().get(i).getGenre();
 //                String image = musicss.getMusic().get(i).getImage();
-            Music music = new Music(title,artist,genre,image);
+                String nhac = "https://storage.googleapis.com/automotive-media/"+objMusic.getString("source");
+            Music music = new Music(title,artist,genre,nhac,image);
             musics.add(music);
 
 
