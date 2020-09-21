@@ -54,7 +54,7 @@ public class PokemonAdapter extends BaseAdapter {
             viewHolder.tv_genre = view1.findViewById(R.id.tv_genre);
             viewHolder.tv_title = view1.findViewById(R.id.tv_title);
             Pokemon pokemon = pokemons.get(i);
-            Log.d("thuy", "getView: duong pokemon");
+
            // viewHolder.tv_genre.setText(pokemon.getGenre());
             viewHolder.tv_title.setText(pokemon.getName());
             viewHolder.tv_artist.setText(pokemon.getUrl());

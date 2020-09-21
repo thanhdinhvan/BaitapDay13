@@ -52,39 +52,17 @@ public class PokemonParser {
                 String name = objectPokemon.getString("name");
                 String urlP = objectPokemon.getString("url");
                 String [] anh = urlP.split("/");
-                Log.d("thuylove", "parPokemon: "+ anh.toString());
+
 
                 int leng1 = anh.length - 1 ;
-                Log.d("tb", "parPokemon: " + anh[leng1]);
+
                 String img = anhPoke+anh[leng1]+".png";
                 Pokemon pokemon = new Pokemon(name,img);
                 pokemons.add(pokemon);
                 leng1 = 0;
                 anh = null;
             }
-            // Musicss musicss = new Musicss(jsonObject.getJSONObject("music"));
-            //    Log.d("lovethuy", "parMusic: "+ musicss.toString());
-            //JSONArray rootArray = musicss.getMusic();
-            // Music[] jsonArray = musicss.getMusicsc();
 
-//            for (int i = 0 ; i < jsonArray.length(); i++ ){
-//
-//                JSONObject objMusic = (JSONObject) jsonArray.get(i);
-//                //   String a = musicss.getMusicsc().;
-//                String title = objMusic.getString("title");
-//                String artist = objMusic.getString("artist");
-//                String genre = objMusic.getString("genre");
-//                String image = "https://storage.googleapis.com/automotive-media/"+objMusic.getString("image");
-////                String title = musicss.getMusic().get(i).getTitle();
-////                String artist =musicss.getMusic().get(i).getArtist();
-////                String genre = musicss.getMusic().get(i).getGenre();
-////                String image = musicss.getMusic().get(i).getImage();
-//                String nhac = "https://storage.googleapis.com/automotive-media/"+objMusic.getString("source");
-//                Pokemon pokemon = new Pokemon();
-//                pokemons.add(pokemon);
-//
-//
-//            }
 
 
 
