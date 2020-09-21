@@ -47,31 +47,32 @@ private MediaPlayer mediaPlayer;
 
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-                try {
-
-                    mediaPlayer.stop();
-
-                    mediaPlayer.setDataSource(musics.get(i).getSource());
-                    //mediaPlayer.prepareAsync();
-                    mediaPlayer.prepare();
-                    mediaPlayer.start();
-                    musicAdapter.notifyDataSetChanged();
-
-
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-
-
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//
+//                try {
+//
+//                    mediaPlayer.stop();
+//
+//                    mediaPlayer.setDataSource(musics.get(i).getSource());
+//                    //mediaPlayer.prepareAsync();
+//                    //mediaPlayer.prepareAsync();
+//                    mediaPlayer.prepare();
+//                    mediaPlayer.start();
+//                    musicAdapter.notifyDataSetChanged();
+//
+//
+//
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//
+//            }
+//        });
 
 
 //        Thread thread = new Thread(this);
